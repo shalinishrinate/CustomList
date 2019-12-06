@@ -21,6 +21,7 @@ namespace CustomListTest
 
             // act
             customList.Add(num1);
+            
             actual = customList[0];
 
             // assert

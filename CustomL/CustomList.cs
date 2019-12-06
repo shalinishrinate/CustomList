@@ -9,10 +9,56 @@ namespace CustomL
     public class CustomList<T>
     {
         // member variables
-        T[] items;
+       private T[] items;
+       private int count; //cause it is a number I am looking for
+       private int capacity;// same as above
 
-        // constructor
+        public T this[int i]
+        {
+            get
+            {
+                return items[i];
+            }
+            set
+            {
+                items[i] = value;
+            }
+        }
 
-        // member methods
-    }
+        public int Count
+        {
+            get
+            {
+                return count;
+            }
+         
+        }
+
+        public void Add
+        {
+            //get
+            //{
+            //    return capacity;
+            //}
+            //set
+            //{
+            //    // move this to Add() method
+            //    if ( count == capacity)/*count reaches capacity*/
+            //    {
+            //        capacity*= 2;// double the , it means same as capacity += capacity;
+            //    }
+
+            //}
+
+        }
+
+        
+
+
+
+
+                // constructor
+
+                // member methods
+            }
 }
