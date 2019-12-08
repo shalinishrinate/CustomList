@@ -62,13 +62,13 @@ namespace CustomL
             }
 
 
-            T[] tempArray = new T[capacity]; // need to make this items already in the smaller array not need to be transferre to a new array
+            T[] tempArray = new T[capacity]; 
 
             for (int i = 0; i < count; i++) // items need to transferred to the new array
             {
                 tempArray[i] = items[i];
             }
-            //tempArray[count] = item; // item here is equal to capacity  
+            
             items = new T[capacity];
             for (int i = 0; i < count; i++) // items need to transferred to the new array
             {
@@ -80,6 +80,7 @@ namespace CustomL
 
 
         }
+
    
     }
 }
