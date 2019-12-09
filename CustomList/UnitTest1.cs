@@ -96,6 +96,8 @@ namespace CustomListTest
         }
 
         //Add Test 4: check if new item is added to the end
+
+            [TestMethod]
         public void Add_string_ReturnsNewerItemsAddedTotheEnd()
         {
             //arrange
@@ -191,7 +193,7 @@ namespace CustomListTest
         public void Remove_ItemsFromAList_ReturnNewCount()
         {
             //arrange
-            CustomList<int>customList = new CustomList<int>();
+            CustomList<int> customList = new CustomList<int>();
             int num1 = 5;
             int num2 = 10;
             int num3 = 15;
@@ -344,6 +346,10 @@ namespace CustomListTest
         }
 
 
+        /////**String**/////
+
+        // public void a_b
+        //CustomList
     }
 }
 

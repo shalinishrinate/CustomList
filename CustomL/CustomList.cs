@@ -10,7 +10,7 @@ namespace CustomL
     {
         // member variables
         private T[] items;
-        private int count; 
+        private int count;
         private int capacity;
 
 
@@ -60,14 +60,14 @@ namespace CustomL
             {
                 capacity *= 2; //count reaches capacity, then doubling the capacity
             }
-            
+
             T[] tempArray = new T[capacity]; //creating a new array of size new capacity
 
             for (int i = 0; i < count; i++) // Loops through the previous, smaller array and adds the items to the new array. 
             {
                 tempArray[i] = items[i]; // item from original array is equal to item of new array in the same index
             }
-            
+
             items = new T[capacity];
             for (int i = 0; i < count; i++) // items need to transferred to the new array
             {
@@ -78,7 +78,42 @@ namespace CustomL
             count++;
         }
 
-   
-    }
-}
 
+        public void Remove(T item)
+        {
+            T[] tempArray = new T[capacity];
+          
+            bool haveFoundItem = false;
+            for (int i = 0; i < count; i++)
+            {
+                if (items[i].Equals(item) || haveFoundItem)
+                {
+                    if(i == capacity - 1)
+                    {
+                        // gets the default value for data type "T"
+                        T defaultValue = default(T);
+                        tempArray[i] = defaultValue;
+                    }
+                    else
+                    {
+                        tempArray[i] = items[i + 1];
+                    }
+                    haveFoundItem = true;
+                }
+                else if (!items[i].Equals(item))
+                {
+                    tempArray[i] = items[i];
+                    //index++;
+                }
+            }
+
+            items = tempArray;
+
+            if (haveFoundItem == true)
+            {
+                count--;
+            }
+        }
+    }
+
+}
