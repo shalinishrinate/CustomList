@@ -10,8 +10,8 @@ namespace CustomL
     {
         // member variables
         private T[] items;
-        private int count; //cause it is a number I am looking for
-        private int capacity;// same as above
+        private int count; 
+        private int capacity;
 
 
         //constructor
@@ -24,7 +24,7 @@ namespace CustomL
 
 
         //methods
-        public T this[int i]
+        public T this[int i] // C# indexer so that one can make the objects in the list accessible via index.
         {
             get
             {
@@ -32,7 +32,7 @@ namespace CustomL
             }
             set
             {
-                items[i] = value;
+                items[i] = value; // value is inbuilt keyword, word value references the value that client code is attempting to assign to the property. 
             }
         }
 
@@ -58,15 +58,14 @@ namespace CustomL
         {
             if (count == capacity)
             {
-                capacity *= 2; //count reaches capacity// 
+                capacity *= 2; //count reaches capacity, then doubling the capacity
             }
+            
+            T[] tempArray = new T[capacity]; //creating a new array of size new capacity
 
-
-            T[] tempArray = new T[capacity]; 
-
-            for (int i = 0; i < count; i++) // items need to transferred to the new array
+            for (int i = 0; i < count; i++) // Loops through the previous, smaller array and adds the items to the new array. 
             {
-                tempArray[i] = items[i];
+                tempArray[i] = items[i]; // item from original array is equal to item of new array in the same index
             }
             
             items = new T[capacity];
@@ -77,8 +76,6 @@ namespace CustomL
 
             items[count] = item;
             count++;
-
-
         }
 
    
