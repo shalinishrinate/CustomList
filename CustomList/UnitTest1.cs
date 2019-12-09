@@ -346,10 +346,79 @@ namespace CustomListTest
         }
 
 
-        /////**String**/////
+        /////**String**//////
+      
 
-        // public void a_b
-        //CustomList
+        //ToString Test 1: 
+
+        [TestMethod]
+        public void ToString_ItemWithNoAssignedValue_ReturnStringItem()
+        {
+            //arrange
+            CustomList<string> customList = new CustomList<string>();
+            string expected = "";
+            string actual;
+
+            //act
+            actual = customList.ToString();
+
+            //assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        //ToString Test 2: 
+
+        [TestMethod]
+        public void ToString_SingleStringItem_ReturnString()
+        {
+            //arrange
+            CustomList<string> customList = new CustomList<string>();
+            string city1 = "Franklin";
+            string expected = "Franklin";
+            string actual;
+
+            //act
+            customList.Add(city1);
+
+            actual = customList.ToString();
+
+            //assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+
+        //ToString Test 3: 
+
+        [TestMethod]
+        public void ToString_MultipleIntItems_ReturnStringItems()
+        {
+            //arrange
+            CustomList<int> customList = new CustomList<int>();
+            int num1 = 5;
+            int num2 = 10;
+            int num3 = 15;
+            int num4 = 20;
+
+            string expected = "5101520";
+            string actual;
+
+            //act
+            customList.Add(num1);
+            customList.Add(num2);
+            customList.Add(num3);
+            customList.Add(num4);
+
+            actual = customList.ToString();
+
+            //assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        
+
     }
 }
 

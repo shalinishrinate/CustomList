@@ -114,6 +114,17 @@ namespace CustomL
                 count--;
             }
         }
+
+        public override string ToString()
+        {
+            string stringName = "";
+            for (int i = 0; i < count; i++)
+            {
+                Convert.ToString(items[i]);
+                stringName += (items[i]);
+            }
+            return stringName;
+        }
     }
 
 }
