@@ -834,7 +834,7 @@ namespace CustomListTest
             //arrange
             CustomList<int> customList1 = new CustomList<int>();
             CustomList<int> customList2 = new CustomList<int>();
-            CustomList<int> zippedResult = new CustomList<stringint>();
+            CustomList<int> zippedResult = new CustomList<int>();
 
             int num1 = 5;
             int num2 = 15;
@@ -846,11 +846,11 @@ namespace CustomListTest
             int actual;
 
             //act
-            customList1.Add(city1);
-            customList1.Add(city2);
-            customList2.Add(city3);
-            customList2.Add(city4);
-            customList2.Add(city5);
+            customList1.Add(num1);
+            customList1.Add(num2);
+            customList2.Add(num3);
+            customList2.Add(num4);
+            customList2.Add(num5);
 
             zippedResult = customList1.Zip(customList2);
             actual = zippedResult.ToString();
