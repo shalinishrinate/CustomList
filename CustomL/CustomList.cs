@@ -154,6 +154,46 @@ namespace CustomL
             }
             return listResult;
         }
-        
+
+        public CustomList<T>Zip(CustomList<T> customList1, CustomList<T>customList2)
+        {
+            CustomList<T> zippedResult = new CustomList<T>();
+            if (customList1.Count > customList2.Count)
+            {
+                for (int i = 0; i < customList1.Count; i++)
+                {
+                    zippedResult.Add(customList1[i]);
+
+                    if (i < customList2.Count)
+                    {
+                        zippedResult.Add(customList2[i]);
+                    }
+                }
+            }
+            else if (customList2.Count > customList1.Count)
+            {
+                for (int i = 0; i < customList2.Count; i++)
+                {
+                    
+                    if (i < customList1.Count)
+                    {
+                        zippedResult.Add(customList1[i]);
+                    }
+                    zippedResult.Add(customList2[i]);
+                }
+            }
+            else
+            {
+                for (int i = 0, j = 0; i < customList1.Count && j < customList2.Count; i++ , j++)
+                {
+                    zippedResult.Add(customList1[i]);
+                    zippedResult.Add(customList2[j]);
+
+                }
+            }
+
+            return zippedResult;
+        }
+
     }
 }

@@ -69,29 +69,31 @@ namespace CustomL
             //customList.Add(num3);
             //customList.Add(num4);
 
-            CustomList<int> customList1 = new CustomList<int>();
-            CustomList<int> customList2 = new CustomList<int>();
-            CustomList<int> combinedList = new CustomList<int>();
-            int num1 = 5;
-            int num2 = 10;
-            int num3 = 15;
-            int num4 = 20;
-            int num5 = 25;
-            int num6 = 30;
-            string expected = "51015202530";
-            string actual;
+            //CustomList<int> customList1 = new CustomList<int>();
+            //CustomList<int> customList2 = new CustomList<int>();
+            //CustomList<int> combinedList = new CustomList<int>();
+            //int num1 = 5;
+            //int num2 = 10;
+            //int num3 = 15;
+            //int num4 = 20;
+            //int num5 = 25;
+            //int num6 = 30;
+            //string expected = "51015202530";
+            //string actual;
 
-            //act
-            customList1.Add(num1);
-            customList1.Add(num2);
-            customList1.Add(num3);
+            ////act
+            //customList1.Add(num1);
+            //customList1.Add(num2);
+            //customList1.Add(num3);
 
-            customList2.Add(num4);
-            customList2.Add(num5);
-            customList2.Add(num6);
+            //customList2.Add(num4);
+            //customList2.Add(num5);
+            //customList2.Add(num6);
 
-            actual = combinedList.ToString();
+            //actual = combinedList.ToString();
 
+            
+            
         }
     }
 }

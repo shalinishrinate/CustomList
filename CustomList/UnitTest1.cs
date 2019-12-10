@@ -737,7 +737,7 @@ namespace CustomListTest
             CustomList<int> customList1 = new CustomList<int>();
             CustomList<int> customList2 = new CustomList<int>();
             CustomList<int> zippedResult = new CustomList<int>();
-
+            CustomList<int> result = new CustomList<int>();
             int num1 = 5;
             int num2 = 10;
             int num3 = 15;
@@ -757,8 +757,8 @@ namespace CustomListTest
             customList2.Add(num5);
             customList2.Add(num6);
 
-            zippedResult = customList1.Zip(customList2);
-            actual = zippedResult.ToString();
+            result = zippedResult.Zip(customList1 , customList2);
+            actual = result.ToString();
 
             //assert
             Assert.AreEqual(expected, actual);
@@ -773,13 +773,14 @@ namespace CustomListTest
             CustomList<int> customList1 = new CustomList<int>();
             CustomList<int> customList2 = new CustomList<int>();
             CustomList<int> zippedResult = new CustomList<int>();
+            CustomList<int> result = new CustomList<int>();
 
             int num1 = 10;
             int num2 = 20;
             int num3 = 30;
             int num4 = 40;
             
-            int expected = 20;
+            int expected = 30;
             int actual;
 
             //act
@@ -788,8 +789,8 @@ namespace CustomListTest
             customList2.Add(num3);
             customList2.Add(num4);
           
-            zippedResult = customList1.Zip(customList2);
-            actual = zippedResult[1];
+            result = zippedResult.Zip(customList1,customList2);
+            actual = result[1];
 
             //assert
             Assert.AreEqual(expected, actual);
@@ -804,6 +805,7 @@ namespace CustomListTest
             CustomList<string> customList1 = new CustomList<string>();
             CustomList<string> customList2 = new CustomList<string>();
             CustomList<string> zippedResult = new CustomList<string>();
+            CustomList<string> result = new CustomList<string>();
 
             string city1 = "waukesha";
             string city2 = "pewaukee";
@@ -819,8 +821,8 @@ namespace CustomListTest
             customList2.Add(city3);
             customList2.Add(city4);
 
-            zippedResult = customList1.Zip(customList2);
-            actual = zippedResult.Count;
+            result = zippedResult.Zip(customList1, customList2);
+            actual = result.Count;
 
             //assert
             Assert.AreEqual(expected, actual);
@@ -835,25 +837,28 @@ namespace CustomListTest
             CustomList<int> customList1 = new CustomList<int>();
             CustomList<int> customList2 = new CustomList<int>();
             CustomList<int> zippedResult = new CustomList<int>();
+            CustomList<int> result = new CustomList<int>();
 
             int num1 = 5;
             int num2 = 15;
+
             int num3 = 25;
             int num4 = 35;
             int num5 = 45;
 
             string expected = "525153545";
-            int actual;
+            string actual;
 
             //act
             customList1.Add(num1);
             customList1.Add(num2);
+
             customList2.Add(num3);
             customList2.Add(num4);
             customList2.Add(num5);
 
-            zippedResult = customList1.Zip(customList2);
-            actual = zippedResult.ToString();
+            result = zippedResult.Zip(customList1, customList2);
+            actual = result.ToString();
 
             //assert
             Assert.AreEqual(expected, actual);
