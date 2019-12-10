@@ -587,6 +587,148 @@ namespace CustomListTest
             //Assert.AreEqual(expected, actual);
         }
 
+        /////** OverLoad -Operator **/////
+
+        //Test 1
+        [TestMethod]
+        
+        public void OverLoadMinusOperator_TwoListsOfInt_ReturnIndex()
+        {
+            //arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            CustomList<int> listResult= new CustomList<int>();
+            int num1 = 5;
+            int num2 = 10;
+            int num3 = 15;
+            int num4 = 5;
+            int num5 = 25;
+            int num6 = 30;
+            string expected = "10";
+            string actual;
+
+            //act
+            customList1.Add(num1);
+            customList1.Add(num2);
+            customList1.Add(num3);
+
+            customList2.Add(num4);
+            customList2.Add(num5);
+            customList2.Add(num6);
+
+            listResult= customList1 - customList2 ;
+            actual = listResult[0];
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        //Test 2
+        [TestMethod]
+
+        public void OverLoadMinusOperator_TwoListsOfString_ReturnShortenedList()
+        {
+            //arrange
+            CustomList<string> customList1 = new CustomList<string>();
+            CustomList<string> customList2 = new CustomList<string>();
+            CustomList<string> listResult = new CustomList<string>();
+            string alpha1 = "a";
+            string alpha2 = "b";
+            string alpha3 = "c";
+            string alpha4 = "a";
+            string alpha5 = "e";
+
+            string expected = "bc";
+            string actual;
+
+            //act
+            customList1.Add(alpha1);
+            customList1.Add(alpha2);
+            customList1.Add(alpha3);
+
+            customList2.Add(alpha4);
+            customList2.Add(alpha5);
+            
+
+            listResult = customList1 - customList2;
+            actual = listResult.ToString();
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        //Test3
+        [TestMethod]
+
+        public void OverLoadMinusOperator_TwoListsofStrings_ReturnCount()
+        {
+            //arrange
+            CustomList<string> customList1 = new CustomList<string>();
+            CustomList<string> customList2 = new CustomList<string>();
+            CustomList<string> listResult = new CustomList<string>();
+
+            string city1 = "milwaukee";
+            string city2 = "waukesha";
+            string city3 = "pewaukee";
+            string city4 = "waukesha";
+            string city5 = "franklin";
+
+            int expected = 2;
+            int actual;
+
+            //act
+            customList1.Add(city1);
+            customList1.Add(city2);
+            customList1.Add(city3);
+            customList2.Add(city4);
+            customList2.Add(city5);
+
+
+            listResult = customList1 - customList2;
+            actual = listResult.Count;
+
+            //Assert
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        //Test4
+        [TestMethod]
+
+        public void OverLoadMinusOperator_TwoListsWithNoCommonItems_ReturnList()
+        {
+            //arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            CustomList<int> listResult = new CustomList<int>();
+
+            int num1 = 5;
+            int num2 = 10;
+            int num3 = 15;
+            int num4 = 20;
+            int num5 = 25;
+            int num6 = 30;
+
+            string expected = "51015";
+            string actual;
+
+            //act
+            customList1.Add(num1);
+            customList1.Add(num2);
+            customList1.Add(num3);
+            customList2.Add(num4);
+            customList2.Add(num5);
+            customList2.Add(num6);
+
+
+            listResult = customList1 - customList2;
+            actual = listResult.ToString();
+
+            //Assert
+
+            Assert.AreEqual(expected, actual);
+        }
+
 
 
 
