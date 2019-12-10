@@ -422,7 +422,7 @@ namespace CustomListTest
         //Test 1
         [TestMethod]
 
-        public void OverLoadPlusOperator_CombineTwoLists_ReturnCombinedList()
+        public void OverLoadPlusOperator_CombineTwoListsOfInt_ReturnCombinedList()
         {
             //arrange
             CustomList<int> customList1 = new CustomList<int>();
@@ -446,6 +446,7 @@ namespace CustomListTest
             customList2.Add(num5);
             customList2.Add(num6);
 
+            combinedList = customList1 + customList2;
             actual = combinedList.ToString();
 
             //assert
@@ -453,9 +454,10 @@ namespace CustomListTest
         }
 
         //Test 2
+
         [TestMethod]
 
-        public void OverLoadPlusOperator_CombineTwoLists_ReturnACombinedList()
+        public void OverLoadPlusOperator_CombineTwoListsofStrings_ReturnACombinedList()
         {
             //arrange
             CustomList<string> customList1 = new CustomList<string>();
@@ -463,12 +465,13 @@ namespace CustomListTest
             CustomList<string> combinedList = new CustomList<string>();
 
             string alpha1 = "a";
-            string alpha2 = "b";
-            string alpha3 = "c";
-            string alpha4 = "d";
-            string alpha5 = "e";
-            string alpha6 = "f";
-            string expected = "abcdef";
+            string alpha2 = "m";
+            string alpha3 = "e";
+            string alpha4 = "r";
+            string alpha5 = "i";
+            string alpha6 = "c";
+            string alpha7 = "a";
+            string expected = "america";
             string actual;
 
             //act
@@ -479,11 +482,109 @@ namespace CustomListTest
             customList2.Add(alpha4);
             customList2.Add(alpha5);
             customList2.Add(alpha6);
+            customList2.Add(alpha7);
 
+            combinedList = customList1 + customList2;
             actual = combinedList.ToString();
 
             //assert
             Assert.AreEqual(expected, actual);
+        }
+
+
+        //Test3
+        [TestMethod]
+
+        public void OverLoadPlusOperator_CombineTwoListsofStrings_ReturnIndex()
+        {
+            //arrange
+            CustomList<string> customList1 = new CustomList<string>();
+            CustomList<string> customList2 = new CustomList<string>();
+            CustomList<string> combinedList = new CustomList<string>();
+
+            string city1 = "milwaukee";
+            string city2 = "waukesha";
+            string city3 = "brookfield";
+            string city4 = "franklin";
+
+            string expected = "franklin";
+            string actual;
+
+            //act
+            customList1.Add(city1);
+            customList1.Add(city2);
+            customList2.Add(city3);
+            customList2.Add(city4);
+
+            combinedList = customList1 + customList2;
+            actual = combinedList[3];
+            
+            //Assert
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        //Test4
+        [TestMethod]
+
+        public void OverLoadPlusOperator_CombineTwoListsofStrings_ReturnCount()
+        {
+            //arrange
+            CustomList<string> customList1 = new CustomList<string>();
+            CustomList<string> customList2 = new CustomList<string>();
+            CustomList<string> combinedList = new CustomList<string>();
+
+            string city1 = "milwaukee";
+            string city2 = "waukesha";
+            string city3 = "brookfield";
+            string city4 = "franklin";
+
+            int expected = 4;
+            int actual;
+
+            //act
+            customList1.Add(city1);
+            customList1.Add(city2);
+            customList2.Add(city3);
+            customList2.Add(city4);
+
+            combinedList = customList1 + customList2;
+            actual = combinedList.Count;
+
+            //Assert
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        //Test5
+        [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void OverLoadPlusOperator_CombineTwoListsofStrings_Return()
+        {
+            //arrange
+            CustomList<string> customList1 = new CustomList<string>();
+            CustomList<string> customList2 = new CustomList<string>();
+            CustomList<string> combinedList = new CustomList<string>();
+
+            string city1 = "milwaukee";
+            string city2 = "waukesha";
+            string city3 = "brookfield";
+            string city4 = "franklin";
+
+            string actual;
+
+            //act
+            customList1.Add(city1);
+            customList1.Add(city2);
+            customList2.Add(city3);
+            customList2.Add(city4);
+
+            combinedList = customList1 + customList2;
+            actual = combinedList[5];
+
+            //Assert
+
+            //Assert.AreEqual(expected, actual);
         }
 
 

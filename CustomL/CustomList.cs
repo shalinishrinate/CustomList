@@ -82,13 +82,13 @@ namespace CustomL
         public void Remove(T item)
         {
             T[] tempArray = new T[capacity];
-          
+
             bool haveFoundItem = false;
             for (int i = 0; i < count; i++)
             {
                 if (items[i].Equals(item) || haveFoundItem)
                 {
-                    if(i == capacity - 1)
+                    if (i == capacity - 1)
                     {
                         // gets the default value for data type "T"
                         T defaultValue = default(T);
@@ -125,6 +125,22 @@ namespace CustomL
             }
             return stringName;
         }
-    }
 
+        public static CustomList<T> operator +(CustomList<T> customList1, CustomList<T> customList2)
+        {
+            CustomList<T> combinedList = new CustomList<T>();
+            for (int i = 0; i < customList1.Count; i++)
+            {
+                combinedList.Add(customList1[i]);
+            }
+            for (int i = 0; i < customList2.Count; i++)
+            {
+                combinedList.Add(customList2[i]);
+            }
+            return combinedList;
+
+        }
+        
+        
+    }
 }
