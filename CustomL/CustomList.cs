@@ -140,7 +140,20 @@ namespace CustomL
             return combinedList;
 
         }
-        
+
+        public static CustomList<T> operator -(CustomList<T> customList1, CustomList<T> customList2)
+        {
+            CustomList<T> listResult = new CustomList<T>();
+            for (int i = 0; i < customList2.Count; i++)
+            {
+                customList1.Remove(customList2[i]);
+            }
+            for (int i = 0; i < customList1.Count; i++)
+            {
+                listResult.Add(customList1[i]);
+            }
+            return listResult;
+        }
         
     }
 }

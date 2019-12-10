@@ -604,8 +604,8 @@ namespace CustomListTest
             int num4 = 5;
             int num5 = 25;
             int num6 = 30;
-            string expected = "10";
-            string actual;
+            int expected = 10;
+            int actual;
 
             //act
             customList1.Add(num1);
@@ -682,8 +682,7 @@ namespace CustomListTest
             customList1.Add(city3);
             customList2.Add(city4);
             customList2.Add(city5);
-
-
+            
             listResult = customList1 - customList2;
             actual = listResult.Count;
 
@@ -720,22 +719,145 @@ namespace CustomListTest
             customList2.Add(num5);
             customList2.Add(num6);
 
-
             listResult = customList1 - customList2;
             actual = listResult.ToString();
 
-            //Assert
-
+            //assert
             Assert.AreEqual(expected, actual);
         }
 
+        //////** .Zip **/////
+        
+        //Test1
 
+        [TestMethod]
+        public void Zip_TwoIntLists_ReturnZippedList()
+        {
+            //arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            CustomList<int> zippedResult = new CustomList<int>();
 
+            int num1 = 5;
+            int num2 = 10;
+            int num3 = 15;
 
+            int num4 = 20;
+            int num5 = 25;
+            int num6 = 30;
 
+            string expected = "52010251530"; 
+            string actual;
 
+            //act
+            customList1.Add(num1);
+            customList1.Add(num2);
+            customList1.Add(num3);
+            customList2.Add(num4);
+            customList2.Add(num5);
+            customList2.Add(num6);
 
+            zippedResult = customList1.Zip(customList2);
+            actual = zippedResult.ToString();
 
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        //Test2:index
+
+        [TestMethod]
+        public void Zip_TwoIntLists_ReturnIndex()
+        {
+            //arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            CustomList<int> zippedResult = new CustomList<int>();
+
+            int num1 = 10;
+            int num2 = 20;
+            int num3 = 30;
+            int num4 = 40;
+            
+            int expected = 20;
+            int actual;
+
+            //act
+            customList1.Add(num1);
+            customList1.Add(num2);
+            customList2.Add(num3);
+            customList2.Add(num4);
+          
+            zippedResult = customList1.Zip(customList2);
+            actual = zippedResult[1];
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        //Test3: count
+
+        [TestMethod]
+        public void Zip_TwoStringLists_ReturnCount()
+        {
+            //arrange
+            CustomList<string> customList1 = new CustomList<string>();
+            CustomList<string> customList2 = new CustomList<string>();
+            CustomList<string> zippedResult = new CustomList<string>();
+
+            string city1 = "waukesha";
+            string city2 = "pewaukee";
+            string city3 = "brookfield";
+            string city4 = "sussex";
+
+            int expected = 4;
+            int actual;
+
+            //act
+            customList1.Add(city1);
+            customList1.Add(city2);
+            customList2.Add(city3);
+            customList2.Add(city4);
+
+            zippedResult = customList1.Zip(customList2);
+            actual = zippedResult.Count;
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        //Test4: uneven size
+
+        [TestMethod]
+        public void Zip_TwoListsWithDiffNumbersOfItems_ReturnList()
+        {
+            //arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            CustomList<int> zippedResult = new CustomList<stringint>();
+
+            int num1 = 5;
+            int num2 = 15;
+            int num3 = 25;
+            int num4 = 35;
+            int num5 = 45;
+
+            string expected = "525153545";
+            int actual;
+
+            //act
+            customList1.Add(city1);
+            customList1.Add(city2);
+            customList2.Add(city3);
+            customList2.Add(city4);
+            customList2.Add(city5);
+
+            zippedResult = customList1.Zip(customList2);
+            actual = zippedResult.ToString();
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
 
