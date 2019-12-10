@@ -417,7 +417,81 @@ namespace CustomListTest
 
         }
 
-        
+        /////** OverLoad +Operator **/////
+
+        //Test 1
+        [TestMethod]
+
+        public void OverLoadPlusOperator_CombineTwoLists_ReturnCombinedList()
+        {
+            //arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            CustomList<int> combinedList = new CustomList<int>();
+            int num1 = 5;
+            int num2 = 10;
+            int num3 = 15;
+            int num4 = 20;
+            int num5 = 25;
+            int num6 = 30;
+            string expected = "51015202530";
+            string actual;
+
+            //act
+            customList1.Add(num1);
+            customList1.Add(num2);
+            customList1.Add(num3);
+
+            customList2.Add(num4);
+            customList2.Add(num5);
+            customList2.Add(num6);
+
+            actual = combinedList.ToString();
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        //Test 2
+        [TestMethod]
+
+        public void OverLoadPlusOperator_CombineTwoLists_ReturnACombinedList()
+        {
+            //arrange
+            CustomList<string> customList1 = new CustomList<string>();
+            CustomList<string> customList2 = new CustomList<string>();
+            CustomList<string> combinedList = new CustomList<string>();
+
+            string alpha1 = "a";
+            string alpha2 = "b";
+            string alpha3 = "c";
+            string alpha4 = "d";
+            string alpha5 = "e";
+            string alpha6 = "f";
+            string expected = "abcdef";
+            string actual;
+
+            //act
+            customList1.Add(alpha1);
+            customList1.Add(alpha2);
+            customList1.Add(alpha3);
+
+            customList2.Add(alpha4);
+            customList2.Add(alpha5);
+            customList2.Add(alpha6);
+
+            actual = combinedList.ToString();
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+
+
+
+
+
+
 
     }
 }
