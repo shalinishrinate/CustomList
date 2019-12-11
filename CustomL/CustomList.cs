@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace CustomL
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerable
     {
         // member variables
         private T[] items;
@@ -20,6 +21,14 @@ namespace CustomL
             capacity = 4;
             count = 0;
             items = new T[capacity];
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < Count; i++)
+            {
+                yield return items[i];
+            }
         }
 
 
