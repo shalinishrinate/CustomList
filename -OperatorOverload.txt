@@ -1,0 +1,69 @@
+- Operator Overload Method
+by Shalini Singh
+on 10th December 2019
+
+•	Function
+The ‘-operator’ removes all the contents of one list from another.
+
+•	Parameter
+(CustomList<T> customList1, CustomList<T>customList2)
+customList1: The list from which content is to be removed.
+customList2: The list from which content to be removed is obtained
+
+•	Syntax
+Customlist<T> listResult = CustomList<T> customList1 - Customlist<T> customList2;
+
+•	Return
+
+A new list which has the remaining contents.
+Eg. listResult ( from the below discussed example)
+
+Example 
+
+•	Creation of 3 lists
+
+            CustomList<string> customList1 = new CustomList<string>();
+            CustomList<string> customList2 = new CustomList<string>();
+            CustomList<string> listResult = new CustomList<string>();
+
+•	Declaring and adding to the Lists
+
+            string alpha1 = "a";
+            string alpha2 = "b";
+            string alpha3 = "c";
+            string alpha4 = "a";
+            string alpha5 = "e";
+
+            customList1.Add(alpha1);
+            customList1.Add(alpha2);
+            customList1.Add(alpha3);
+            customList2.Add(alpha4);
+            customList2.Add(alpha5);
+            
+•	A new list which hold the returned value.
+
+listResult = customList1 - customList2;
+
+•	Visual Studio Code that shows the implementation of - operator.
+
+
+public static CustomList<T> operator -(CustomList<T> customList1, CustomList<T> customList2)
+
+        {
+            CustomList<T> listResult = new CustomList<T>();
+
+            for (int i = 0; i < customList2.Count; i++)
+            {
+                customList1.Remove(customList2[i]);
+            }
+            for (int i = 0; i < customList1.Count; i++)
+            {
+                listResult.Add(customList1[i]);
+            }
+            return listResult;
+ }
+•	Through the looping, any items existing customList2 are removed from customList1.
+
+•	There are then returned to listResult.
+
+•	Output: “bc” (for the example discussed above).
